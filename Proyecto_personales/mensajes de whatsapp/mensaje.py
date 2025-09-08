@@ -1,16 +1,15 @@
-# python mensaje.py
+import pywhatkit as kit
 
-import pyautogui, webbrowser
-from time import sleep
+# Número de destino con código de país
+# Ejemplo Chile: +56 (código país) + 9 (celular) + número
+numero = "+56999720338"
 
-numero = 977619531
-numero = str(numero) # Convertir el número a cadena de texto
+# Mensaje a enviar
+mensaje = "Hola 👋, este es un mensaje automático con pywhatkit 🚀"
 
+# Enviar mensaje de inmediato
+# wait_time = segundos que espera antes de mandar (puedes bajarlo si tu internet es rápido)
+# tab_close = True para que cierre la pestaña después de enviar
+kit.sendwhatmsg_instantly(numero, mensaje, wait_time=10, tab_close=True)
 
-webbrowser.open('https://web.whatsapp.com/send?phone='+numero)
-
-sleep(10)
-
-for i in range(10):
-    pyautogui.typewrite('prueba de mensaje')
-    pyautogui.press('enter')
+print("✅ Mensaje enviado con éxito")
